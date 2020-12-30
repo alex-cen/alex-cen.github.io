@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>STEMazing Race</title>
+        <meta name = "description" content ="Play the STEMazing race! Will you get to the end?">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="https://fonts.gstatic.com/s/opensans/v18/mem8YaGs126MiZpBA-UFW50bf8pkAp6a.woff2",rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src ="/logic.js"></script> 
+        <style>
+            p {
+                line-height: 10px;
+            }
+            html {
+                font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+                color: white;
+            }
+            body {
+                text-align: center;
+                background-color: purple;
+                -webkit-animation: animate_bg 5s;
+                animation: animate_bg 5s;
+                -webkit-animation-iteration-count: infinite;
+                animation-iteration-count: infinite;
+            }
+            @keyframes animate_bg {
+                0%   {background:#DC00FE;}
+                50%   {background:#5319FB;}
+                100%   {background:#1B02A3;}
+                100%   {background:#DC00FE;}
+            }
+            @-webkit-keyframes animate_bg {
+                0%   {background:#DC00FE;}
+                50%   {background:#5319FB;}
+                100%   {background:#1B02A3;}
+                100%   {background:#DC00FE;}
+            }
+            
+            #welcome {
+                margin: 0;
+            }
+
+            .center {                
+                margin: 0;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                -ms-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);
+                }
+
+        </style>
+    </head>
+    <body>
+        <p>Soundtrack</p>
+        <audio controls autoplay loop>
+            <source src ="jam.mp3" type ="audio/mpeg">
+            Your browser doesn't support audio :(
+        </audio>
+        <div id ="welcome" class ="center">
+            <h1>STEMazing Race</h1>
+            <p>Click play to get started!</p>
+            <p>If the button moves off screen, zoom out. We show no mercy.</p>
+            <button id = "play" style = "position:absolute" onclick ="stage1()">Play</button>
+        </div>
+        
+        <div id ="lvl2" style="display: none" class ="center">
+            <h1>What does STEM stand for?</h1>
+        </div>
+
+    </body>
+    
+</html>
