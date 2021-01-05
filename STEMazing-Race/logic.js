@@ -13,7 +13,10 @@ seconds = 0;
 goose_moves = 0;
 goose_ego = 100;
 player_health  = 100;
+goose_pets = 0;
 movePlay();
+goose_dec = false;
+timer_on =true;
 
 /* TIMER */
 function clock() {
@@ -21,8 +24,10 @@ function clock() {
         document.getElementById("clock").innerHTML = "69. nice.";
     }
     document.getElementById("clock").innerHTML = "You've taken "+ seconds +" seconds";
-    seconds = seconds+1;
-    setTimeout(clock,1000);
+    if (timer_on) {
+        seconds = seconds+1;
+        setTimeout(clock,1000);
+    }
 }
 
 /* WELCOME STAGE */
@@ -87,7 +92,7 @@ function caughtGoose (){
 
 /* INTRO DIALOG */
 function introText(){
-    document.getElementById("dialog").innerHTML = "<div style ='text-align:left'> Goose: A foolish attempt on my life. No one touches a gOOSE.";
+    document.getElementById("dialog").innerHTML = "<div style ='text-align:left'> Goose: <p> A foolish attempt on my life. No one touches a gOOSE.</p>";
     
     setTimeout(
         function()
@@ -203,7 +208,7 @@ $(document).ready(function(){
         /* QUESTION 10 */
         else if (this.name=='q10' && this.id=='o1') {
             advanceLevel(10);
-            $('#health_bars').remove(); 
+            $('#player_health').remove(); 
             sadGooseDialog();
         }
 
@@ -218,7 +223,8 @@ $(document).ready(function(){
 
 /* Sad Goose Revival */
 function sadGooseDialog(){
-    document.getElementById("sad_goose_dialog").innerHTML = "<p>Goose: i - i just wanted to play.</p>";
+    goose_dec = true;
+    document.getElementById("sad_goose_dialog").innerHTML = "Goose: <p>i - i just wanted to play.</p>";
     
     setTimeout(
         function()
@@ -237,4 +243,67 @@ function sadGooseDialog(){
         {
             $('#pet_goose').show(600);
         },6000);
+}
+
+function finalQuest(){
+    $('#sad_dialog').hide();
+    $('#pet_goose').remove()
+    $('#pet_le_goose').show(300);
+    goose_dec = true;
+    casualDecrement();
+}
+
+
+function casualDecrement(){
+    if (goose_dec){
+        setTimeout(
+            function()
+            {
+                if (goose_ego >= 5 && goose_ego <= 100){
+                    goose_ego = goose_ego - 1;
+                    $('#goose_ego').animate({width: goose_ego+ '%'},0.5);
+                }
+                casualDecrement();
+            },500);
+        }
+}
+
+function petGoose(){
+    goose_pets = goose_pets + 1;
+    document.getElementById("petCount").innerHTML = ''+ goose_pets; 
+    if (goose_ego >= 100){
+        goose_dec = false;
+        finishScreen();
+    }
+    goose_ego = goose_ego + 2;
+    $('#goose_ego').animate({width: goose_ego+ '%'},0.5);
+    $('#goose').animate({width: '+=1%'},0.5);
+    honk.play();
+}
+
+/* Finish Screen */
+function finishScreen(){
+    timer_on = false;
+    $('#pet_le_goose').remove();
+    document.getElementById('sad_goose_dialog').innerHTML = "Goose: <p>t- thank you. you're a badguy, but not a <i> bad guy </i>.</p> ";
+    $('#sad_dialog').show();
+    setTimeout(
+        function()
+        {
+            document.getElementById("sad_goose_dialog").insertAdjacentHTML( 'beforeend', "<p>i know what you came here for.</p>" ); 
+        },3000);
+
+    setTimeout(
+        function()
+        {
+            document.getElementById("sad_goose_dialog").insertAdjacentHTML( 'beforeend', "<p>the secret word is: <b>STEMazing!</b></p>" ); 
+            $('#go_to_credits').show(600);
+        },5000);
+
+}
+
+function credits(){
+    document.getElementById("time_took").innerHTML = "It only took you " + seconds +"s.";
+    $('#lvl11').hide(300);
+    $('#credits').show(300);
 }

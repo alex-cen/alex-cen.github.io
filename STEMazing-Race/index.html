@@ -35,13 +35,11 @@
 
     <div id = "game_over" class ="center" style ="display:none">
         <h1>Game over. You have lost all your dignity.</h1>
-        <p>You'll want to try that again.</p>
+        <p>Capture the goose (again) to restore your honor.</p>
         <button id ="refresh" onclick="window.location.reload(true)">Start again.</button>
     </div>
 
     <div id ="game_content">
-        <p>Soundtrack: Darude - Sandstorm</p>
-
         <div id ="settings" style ="display:none; position: fixed">
             <p>Control Background Music</p>
             <audio controls autoplay loop>
@@ -58,12 +56,13 @@
 
         <div id ="health_bars" style = "display:none">
             <div id ="player_health" class = "health" style = "background-color: green;">your dignity</div>
-            <div id ="goose_ego" class = "health" style = "background-color: rgb(235, 182, 11);">Goose's ego</div>
+            <div id ="goose_ego" class = "health" style = "background-color: rgb(235, 182, 11);">goose's ego</div>
         </div>
 
+        <div id ="game_screen">
 
        <!-- Welcome Screen-->
-        <div id ="welcome" class ="center">
+        <div id ="welcome" class = "center">
             <h1>STEMazing Race</h1>
             <p>Click play to get started!</p>
             <button id = "play" style = "position:absolute" onclick ="initiate()">Play</button>
@@ -221,17 +220,25 @@
             <div id ="sad_dialog">
                 <p id ="sad_goose_dialog" style ="text-align:left"></p>
                 <button id = "pet_goose" style ="display:none" onclick="finalQuest()">pet goose</button>
+                <button id = "go_to_credits" style ="display:none" onclick="credits()">Continue</button>
+            </div>
+            <div id ="pet_le_goose" style = "display:none">
+                <h1>pet the goose to recover her go!</h1>
+                <img src ="goose.png" id ='goose' style ="width:5%" onclick ="petGoose()"></img>
+                <p>You have pet the goose <div id ="petCount">0</div> times</p>
             </div>
         </div>
-        <!-- Final Screen -->
-        <div id ="final" style="display: none" class ="center">
-            <h1>You completed all our puzzles!</h1>
-            <p>The key is "<b>STEMazing!</b>".</p>
-            <p>Enjoyed the game? Why not <a href = "https://tinyurl.com/ayjstem">join STEM Club</a> and do more awesome things with us!</p>
-            <p>Really passionate about STEM? <a href = "https://tinyurl.com/ayjstem">Apply to be an exec</a>!</p>
-            <p>Curious about how we made this? Check out Alex's <a href = "https://github.com/alex-cen/alex-cen.github.io/tree/main/STEMazing-Race">Github</a> to see the code.</p>
+
+        <!-- credit screen -->
+        <div id ="credits" style="display: none" class ="center">
+            <h1>You completed all of our puzzles!</h1>
+            <p id ="time_took"></p>
+            <p>Enjoyed the game? Why not <a href = "https://tinyurl.com/ayjstem" target ="_blank">join STEM Club</a> and do more awesome things with us!</p>
+            <p>Really passionate about STEM? <a href = "https://tinyurl.com/ayjstem" target="_blank">Apply to be an exec</a>!</p>
+            <p>Curious about how we made this? Check out Alex's <a href = "https://github.com/alex-cen/alex-cen.github.io/tree/main/STEMazing-Race" target="_blank">Github</a> to see the code.</p>
         </div>
         
+    </div>
     <div id ="clock" style ="position:fixed;bottom:3%"></div>
     </body>
 </div>
