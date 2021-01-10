@@ -1,5 +1,9 @@
 /* Gotta make the site look SNAZZY! */
 
+@font-face { font-family: Commodore-pixel; src: url('fonts/Commodore-64.TTF'); } 
+@font-face { font-family: Commodore-angle; src: url('fonts/Commodore_Angled.ttf'); } 
+@font-face { font-family: Commodore-round; src: url('fonts/Commodore_Rounded.ttf'); } 
+
 h1 {
     font-size: 200%;
 }
@@ -42,6 +46,20 @@ body {
     100%   {background:#DC00FE;}
 }
 
+button{
+    font-family: Commodore-pixel, 'Open Sans', Arial, Helvetica, sans-serif;
+    background-color: #ffffff; 
+    border: solid;
+    border-radius: 10%;
+    border-width: thin;
+    color: black;
+    padding: 1% 2%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin-bottom: 1%;
+}
+
 #welcome {
     margin: 0;
 }
@@ -53,11 +71,11 @@ body {
     left: 50%;
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
+    width: 50%;
     }
 
 .health {
     width: 100%;
-    height: 3%;
     font-size: 5%;
     margin-bottom: 0.5%;
 }

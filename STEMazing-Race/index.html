@@ -40,10 +40,11 @@
     </div>
 
     <div id ="game_content">
-        <div id ="settings" style ="display:none; position: fixed">
-            <p>Control Background Music</p>
+        <div id ="settings" style ="display:none; position: fixed; font-family: Commodore-pixel; margin-top: 5%;">
+            <p style = "font-size: 500%; margin-bottom: 0; margin-top: 0">ï</p>
+            <p> Control Background Music</p>
             <audio controls autoplay loop>
-                <source src ="jam.mp3" type ="audio/mpeg">
+                <source src ="audio/jam.mp3" type ="audio/mpeg">
                 Your browser doesn't support audio :(
             </audio>
         </div>
@@ -63,7 +64,7 @@
 
        <!-- Welcome Screen-->
         <div id ="welcome" class = "center">
-            <h1>STEMazing Race</h1>
+            <h1 style ="font-family: Commodore-pixel">STEMazing Race</h1>
             <p>Click play to get started!</p>
             <button id = "play" style = "position:absolute" onclick ="initiate()">Play</button>
         </div>
@@ -77,7 +78,7 @@
         
         <!-- Intro dialog-->
         <div id = "intro_dialog" class = "center">
-            <p id ="dialog"></p>
+            <p id ="dialog" style ="font-family: Commodore-pixel"></p>
             <button id = "continue" style ="display:none" onclick="startQuest()">Continue</button>
         </div>
 
@@ -218,13 +219,13 @@
         <!-- Question 11-->
         <div id ="lvl11" style="display: none" class ="center">
             <div id ="sad_dialog">
-                <p id ="sad_goose_dialog" style ="text-align:left"></p>
+                <p id ="sad_goose_dialog" style ="text-align:left; font-family:Commodore-pixel"></p>
                 <button id = "pet_goose" style ="display:none" onclick="finalQuest()">pet goose</button>
                 <button id = "go_to_credits" style ="display:none" onclick="credits()">Continue</button>
             </div>
             <div id ="pet_le_goose" style = "display:none">
-                <h1>pet the goose to recover her go!</h1>
-                <img src ="goose.png" id ='goose' style ="width:5%" onclick ="petGoose()"></img>
+                <h1>pet the goose to recover her ego!</h1>
+                <img src ="goose.png" id ='goose' style ="width:10%" onclick ="petGoose()"></img>
                 <p>You have pet the goose <div id ="petCount">0</div> times</p>
             </div>
         </div>
@@ -233,13 +234,14 @@
         <div id ="credits" style="display: none" class ="center">
             <h1>You completed all of our puzzles!</h1>
             <p id ="time_took"></p>
+            <p id ="secret_key"></p>
             <p>Enjoyed the game? Why not <a href = "https://tinyurl.com/ayjstem" target ="_blank">join STEM Club</a> and do more awesome things with us!</p>
-            <p>Really passionate about STEM? <a href = "https://tinyurl.com/ayjstem" target="_blank">Apply to be an exec</a>!</p>
+            <p>Really passionate about STEM? <a href = "http://tinyurl.com/ayjstem/apply-exec" target="_blank">Apply to be an exec</a>!</p>
             <p>Curious about how we made this? Check out Alex's <a href = "https://github.com/alex-cen/alex-cen.github.io/tree/main/STEMazing-Race" target="_blank">Github</a> to see the code.</p>
         </div>
         
     </div>
-    <div id ="clock" style ="position:fixed;bottom:3%"></div>
+    <div id ="clock" style ="position:fixed;bottom:3%; font-family: Commodore-round"></div>
     </body>
 </div>
 </html>

@@ -1,13 +1,16 @@
 /* 
 © STEM Club 2020/2021
 AY Jackson Secondary School
-Code by: Alex Cen
+Alex Cen ('21)
 */
 
 /* INITIATIONS */
+console.log("%cSTEM CLUB 2020/2021", "color: blue; font-size: x-large;font-family:'Comic Sans MS'");
+console.log("%cPlease play this game fairly. No using inspect element :)", "color: blue; ");
+console.log("%cOur official site is at https://sites.google.com/tdsb.on.ca/ayjstem", "color: blue; ");
 activate = true; /* Play button */
 uncaught = true; /* GOOSE!! */
-honk = new Audio('honk.mp3');
+honk = new Audio('audio/honk.mp3');
 honk.volume = 1.0;
 seconds = 0;
 goose_moves = 0;
@@ -17,6 +20,7 @@ goose_pets = 0;
 movePlay();
 goose_dec = false;
 timer_on =true;
+already_dec = false;
 
 /* TIMER */
 function clock() {
@@ -122,8 +126,8 @@ function startQuest(){
 
 /* Health Balance*/
 function dec_GooseEgo(){
-    goose_ego = goose_ego - 10;
-    $('#goose_ego').animate({width: goose_ego+ '%'});
+        goose_ego = goose_ego - 10;
+        $('#goose_ego').animate({width: goose_ego+ '%'});
 }
 
 function wrongAns(){
@@ -172,13 +176,19 @@ function lvl9Check(){
 function advanceLevel(curr_lvl){
     $('#success').show(300);
     $('#error').hide(); 
-    dec_GooseEgo();
-    setTimeout(
-        function(){
-            $('#lvl'+curr_lvl).hide(300);
-            $('#lvl'+curr_lvl).remove();
-            $('#lvl'+(curr_lvl+1)).show(600);
-        }, 3000)
+    if(!already_dec){
+        dec_GooseEgo();
+        already_dec = true;  
+        setTimeout(
+            function(){
+                $('#lvl'+curr_lvl).remove();
+                $('#lvl'+(curr_lvl+1)).show(600);
+            }, 3000);
+        setTimeout(
+            function(){
+                    already_dec = false;
+            },3500);
+    }
 }
 
 $(document).ready(function(){
@@ -270,6 +280,7 @@ function casualDecrement(){
 
 function petGoose(){
     goose_pets = goose_pets + 1;
+    honk.play();
     document.getElementById("petCount").innerHTML = ''+ goose_pets; 
     if (goose_ego >= 100){
         goose_dec = false;
@@ -278,10 +289,10 @@ function petGoose(){
     goose_ego = goose_ego + 2;
     $('#goose_ego').animate({width: goose_ego+ '%'},0.5);
     $('#goose').animate({width: '+=1%'},0.5);
-    honk.play();
 }
 
 /* Finish Screen */
+
 function finishScreen(){
     timer_on = false;
     $('#pet_le_goose').remove();
@@ -296,7 +307,7 @@ function finishScreen(){
     setTimeout(
         function()
         {
-            document.getElementById("sad_goose_dialog").insertAdjacentHTML( 'beforeend', "<p>the secret word is: <b>STEMazing!</b></p>" ); 
+            document.getElementById("sad_goose_dialog").insertAdjacentHTML( 'beforeend', "<p>the secret word is: <b>AY</b></p>" ); 
             $('#go_to_credits').show(600);
         },5000);
 
@@ -304,6 +315,7 @@ function finishScreen(){
 
 function credits(){
     document.getElementById("time_took").innerHTML = "It only took you " + seconds +"s.";
+    document.getElementById("secret_key").innerHTML = "The secret key is <b>AY</b>";
     $('#lvl11').hide(300);
     $('#credits').show(300);
 }
