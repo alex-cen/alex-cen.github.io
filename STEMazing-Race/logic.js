@@ -302,12 +302,13 @@ function finishScreen(){
     $('#pet_le_goose').remove();
     document.getElementById('sad_goose_dialog').innerHTML = "Goose: <p>t- thank you. you're a badguy, but not a <i> bad guy </i>.</p> ";
     $('#sad_dialog').show();
+    gainNode.gain.linearRampToValueAtTime(0.01, audioContext.currentTime + 3);
     setTimeout(
         function()
         {
             document.getElementById("sad_goose_dialog").insertAdjacentHTML( 'beforeend', "<p>i know what you came here for.</p>" ); 
         },3000);
-
+    audioElement.pause();
     setTimeout(
         function()
         {
@@ -318,10 +319,6 @@ function finishScreen(){
 }
 
 function credits(){
-    audioElement.pause();
-    audioElement = document.querySelector("#og-theme");
-
-    audioElement.play();
     document.getElementById("time_took").innerHTML = "It only took you " + seconds +"s.";
     document.getElementById("secret_key").innerHTML = "The secret key is <b>AY</b>";
     $('#lvl6').hide(300);
