@@ -27,7 +27,6 @@
         <link rel="https://fonts.gstatic.com/s/opensans/v18/mem8YaGs126MiZpBA-UFW50bf8pkAp6a.woff2",rel="stylesheet">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <script src ="logic.js"></script> 
         <link rel="stylesheet" href="formatting.css">
     </head>
 
@@ -43,11 +42,13 @@
         <div id ="settings" style ="display:none; position: fixed; font-family: Commodore-pixel; margin-top: 5%;">
             <p style = "font-size: 500%; margin-bottom: 0; margin-top: 0">ï</p>
             <p> Control Background Music</p>
-            <audio controls autoplay loop>
+            <audio controls loop>
                 <source src ="audio/jam.mp3" type ="audio/mpeg">
                 Your browser doesn't support audio :(
             </audio>
+            <audio id ="og-theme" src ="https://ayjstem.github.io/audio/intro-final.mp3"></audio>
         </div>
+        <script src ="logic.js"></script> 
         <button id ="toggleSettings" onclick='settings()' style ="position:fixed; left:1%; top: 2%">Settings</button>
         <script>
             function settings(){
@@ -64,7 +65,7 @@
 
        <!-- Welcome Screen-->
         <div id ="welcome" class = "center">
-            <h1 style ="font-family: Commodore-pixel">STEMazing Race</h1>
+            <h1 style ="font-family: Commodore-pixel">The STEM Goose Chase</h1>
             <p>Click play to get started!</p>
             <button id = "play" style = "position:absolute" onclick ="initiate()">Play</button>
         </div>

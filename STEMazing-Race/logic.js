@@ -10,8 +10,6 @@ console.log("%cPlease play this game fairly. No using inspect element :)", "colo
 console.log("%cOur official site is at https://sites.google.com/tdsb.on.ca/ayjstem", "color: blue; ");
 activate = true; /* Play button */
 uncaught = true; /* GOOSE!! */
-honk = new Audio('audio/honk.mp3');
-honk.volume = 1.0;
 seconds = 0;
 goose_moves = 0;
 goose_ego = 100;
@@ -21,6 +19,24 @@ movePlay();
 goose_dec = false;
 timer_on =true;
 already_dec = false;
+
+/*****
+Audio Pain 
+*******/
+const audioContext = new (window.AudioContext || window.webkitAudioContext);
+var audioElement = document.querySelector('audio');
+const track = audioContext.createMediaElementSource(audioElement);
+var gainNode = audioContext.createGain();
+track.connect(gainNode);
+gainNode.connect(audioContext.destination);
+gainNode.gain.setValueAtTime(0.1,0);
+audioElement.play();
+
+/* Create Goose Sound */
+honk = new Audio('audio/honk.mp3');
+honk.volume = 0.1;
+
+/****end of audio stuff****/
 
 /* TIMER */
 function clock() {
@@ -302,6 +318,10 @@ function finishScreen(){
 }
 
 function credits(){
+    audioElement.pause();
+    audioElement = document.querySelector("#og-theme");
+
+    audioElement.play();
     document.getElementById("time_took").innerHTML = "It only took you " + seconds +"s.";
     document.getElementById("secret_key").innerHTML = "The secret key is <b>AY</b>";
     $('#lvl6').hide(300);
