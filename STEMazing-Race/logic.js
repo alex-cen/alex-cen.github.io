@@ -126,13 +126,13 @@ function startQuest(){
 
 /* Health Balance*/
 function dec_GooseEgo(){
-        goose_ego = goose_ego - 10;
+        goose_ego = goose_ego - 20;
         $('#goose_ego').animate({width: goose_ego+ '%'});
 }
 
 function wrongAns(){
     $('#error').show(600);
-    player_health = player_health - 20;
+    player_health = player_health - 40;
     $('#player_health').animate({width: player_health + '%'});
     if(player_health == 0){
         gameOver();
@@ -204,20 +204,8 @@ $(document).ready(function(){
         else if (this.name=='q4' && this.id=='o1'){advanceLevel(4);}
 
         /* QUESTION 5 */
-        else if (this.name=='q5' && this.id=='o4') {advanceLevel(5);}
-
-        /* QUESTION 6 */
-        else if (this.name=='q6' && this.id=='o1') {advanceLevel(6);}
-        
-        /* QUESTION 7 */
-        else if (this.name=='q7' && this.id=='o2') {advanceLevel(7);}
-
-        /* QUESTION 8 */
-        else if (this.name=='q8' && this.id=='o2') {advanceLevel(8);}
-
-        /* QUESTION 10 */
-        else if (this.name=='q10' && this.id=='o1') {
-            advanceLevel(10);
+        else if (this.name=='q5' && this.id=='o2') {
+            advanceLevel(5);
             $('#player_health').remove(); 
             sadGooseDialog();
         }
@@ -316,6 +304,6 @@ function finishScreen(){
 function credits(){
     document.getElementById("time_took").innerHTML = "It only took you " + seconds +"s.";
     document.getElementById("secret_key").innerHTML = "The secret key is <b>AY</b>";
-    $('#lvl11').hide(300);
+    $('#lvl6').hide(300);
     $('#credits').show(300);
 }
