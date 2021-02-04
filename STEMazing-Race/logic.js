@@ -217,7 +217,7 @@ $(document).ready(function(){
         else if (this.name =='q3' && this.id=='o2'){advanceLevel(3);}
 
         /* QUESTION 4 */
-        else if (this.name=='q4' && this.id=='o1'){advanceLevel(4);}
+        else if (this.name=='q4' && this.id=='o3'){advanceLevel(4);}
 
         /* QUESTION 5 */
         else if (this.name=='q5' && this.id=='o2') {
