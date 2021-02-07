@@ -30,7 +30,6 @@ var gainNode = audioContext.createGain();
 track.connect(gainNode);
 gainNode.connect(audioContext.destination);
 gainNode.gain.setValueAtTime(0.1,0);
-audioElement.play();
 
 /* Create Goose Sound */
 honk = new Audio('audio/honk.mp3');
@@ -176,18 +175,7 @@ function lvl2Check(){
     }
 }
 
-/* QUESTION 9 LOGIC */
-function lvl9Check(){
-
-    if (document.getElementById('o'+1).checked && document.getElementById('o'+3).checked && !(document.getElementById('o'+2).checked && document.getElementById('o'+4).checked)){
-        advanceLevel(9);
-    } else{
-        wrongAns();
-    }
-}
-
-
-/* Multiple Choice Logic for every question except q2 and 9, which are select-all*/
+/* Multiple Choice Logic for every question except q2 which is select-all*/
 
 function advanceLevel(curr_lvl){
     $('#success').show(300);

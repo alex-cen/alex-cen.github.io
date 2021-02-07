@@ -42,7 +42,7 @@
         <div id ="settings" style ="display:none; position: fixed; font-family: Commodore-pixel; margin-top: 5%;">
             <p style = "font-size: 500%; margin-bottom: 0; margin-top: 0">ï</p>
             <p> Control Background Music</p>
-            <audio controls loop>
+            <audio controls autoplayloop>
                 <source src ="audio/jam.mp3" type ="audio/mpeg">
                 Your browser doesn't support audio :(
             </audio>
@@ -172,9 +172,16 @@
             <p id ="secret_key"></p>
             <p>Enjoyed the game? Why not <a href = "https://tinyurl.com/ayjstem" target ="_blank">join STEM Club</a> and do more awesome things with us! We're most active on our <a href = "https://instagram.com/ayjstem">instagram (@AYJSTEM)</a>.</p> 
             <p>Really passionate about STEM? <a href = "http://tinyurl.com/ayjstem/apply-exec" target="_blank">Apply to be an exec</a>!</p>
-            <p>Curious about how we made this? Check out Alex and Emma's code on <a href = "https://github.com/ayjstem/ayjstem.github.io" target="_blank">Github</a>.</p>
+            <p>Curious about how we made this? Check out the code on <a href = "https://github.com/ayjstem/ayjstem.github.io" target="_blank">Github</a>.</p>
+            <button onclick = "(function(){$('#credits').hide(); $('#creditList').show(600);})()">Credits</button>
         </div>
-        
+        <div id ="creditList" style ="position: absolute; display:none; text-align:left; bottom: 0px" class="center">
+        <p>HTML/CS/JS, Goose Chase, and Soundtrack: <a href ="https://instagram.com/mlpegasus">Alex Cen</a></p>
+        <p>Twine & Storyline Front: <a href = "https://www.instagram.com/saeranxsaewalk/">Emma Dong</a></p>
+        <p>Story Editing & Concision: Cindy Qiao, Lucy Wu, Linda Wu</p>
+        <p>© AYJ STEM 2020/2021 (<a href = "https://www.instagram.com/ayjstem">@ayjstem</a>)</p>
+        <button onclick ="(function(){$('#creditList').hide(); $('#credits').show(600);})()">Back</button>
+        </div>      
     </div>
     <div id ="clock" style ="position:fixed;bottom:3%; font-family: Commodore-round"></div>
     </body>
