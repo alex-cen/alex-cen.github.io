@@ -38,7 +38,7 @@
         <div class="topnav" id="myTopnav">
             <a href ="/index.html" style ="color:white">Potty@AY</a> 
             <div style ='float:right'> <!--Float buttons right-->
-            <a class="active" href="#report" onclick = "(function(){alert('Coming soon. Pls dr burt i only had like a week to do all this.')})()">Report</a>
+            <a class="active" href="#report" onclick = "redirectReport()">Report</a>
             </div>
         </div>
 
@@ -78,8 +78,18 @@
                     <li>Potty@AY is anonymous. Any report that is filed only contains information that is displayed on the dashboard.</li>
                 </ul>
                 <p>Join the potty! Next time you're using a washroom without soap or toilet paper, file a report! A group of people vaping? File a report!</p>
+                
+                <!--Temporary for demo purposes-->
+                <script>
+                    function redirectReport(){
+                        if(confirm('Pls dr burt i only had 1 week to do this. for now this button redirects you to a report form for 1 washroom only.')){
+                            window.location.href = "https://docs.google.com/forms/d/e/1FAIpQLSdQZU0v4bc4IsjKWdg-PqpFs41WREefMmEL3QPnWPjA7A3i9g/viewform";
+                        }
+                    }
+                </script>
+
                 <a href ="#report" 
-                onclick = "(function(){alert('Coming soon. Pls dr burt i only had like a week to do all this.')})()"
+                onclick = "redirectReport()"
                 style = 
                 "width: 100%;
                 background-color: rgb(10, 103, 243);
