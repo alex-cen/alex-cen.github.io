@@ -1,0 +1,112 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="nav-bar.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <link rel="https://fonts.gstatic.com/s/opensans/v18/mem8YaGs126MiZpBA-UFW50bf8pkAp6a.woff2",rel="stylesheet">
+        <style>
+            html {
+                font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+            }
+            body {
+                margin: 0;
+                padding-bottom: 100px;
+            }
+            .content {
+                margin: 8;
+            }
+
+            a, a:visited{
+                color: black;
+            }
+
+        #big-foot{
+            margin-top: 100px;
+            background-color:grey;
+            width:100%;
+            overflow: hidden;
+            color: white;
+            position: fixed;
+            bottom: 0;
+            height: 30px;
+            font-size: 50%;
+        }
+        </style>
+    </head>
+    <body>
+        <!-- Navigation Bar -->
+        <!-- Modified from a W3 Schools tutorial-->
+        <div class="topnav" id="myTopnav">
+            <a href ="index.html" style ="color:white">Potty@AY</a> 
+            <div style ='float:right'> <!--Float buttons right-->
+            <a class="active" href="#report" onclick = "redirectReport()">Report</a>
+            </div>
+        </div>
+
+        <div class ="content">
+
+            <h1>Washroom Dashboard</h1>
+
+            <div style = "background:url(/loading.gif) center center no-repeat">
+                <iframe 
+                src="https://docs.google.com/spreadsheets/d/1CYVfWe5zlrBebHZ_k4H3CNPCDFdQ_ji9ERcvn2vxa3E/htmlembed/sheet?gid=0&amp;single=true&amp;widget=false&amp;headers=false&amp;range=a1%3Ad6&amp;chrome=false"
+                style ="width:100%;height:126px;border:0"
+                ></iframe>
+            </div>
+
+            <p>Updates automatically. <a href ="." >Reload now.</a></p>
+            <p id ="currentTime"></p>
+            <script>
+                // Shows current time
+                function time(){
+                let current = new Date();
+                /*
+                let cDate = current.getFullYear() + '-' + (current.getMonth() + 1) + '-' + current.getDate();
+                let cTime = current.getHours() + ":" + current.getMinutes() + ":" + current.getSeconds();
+                let dateTime = cDate + ' ' + cTime;
+                */
+                document.getElementById("currentTime").innerHTML = current;
+                }
+                setInterval(time,1000);
+            </script>
+            <hr>
+            <div style ="margin: 16">
+                <h2>Usage</h2>
+                <p>Potty@AY displays the last known status on toilet paper, soap, and illicit activity in washrooms at AY.</p>
+                <p>Key Facts:</p>
+                <ul>
+                    <li>Potty@AY is crowdsourced. It relies on people reporting washrooms that have run out of inventory.</li>
+                    <li>Potty@AY is anonymous. Any report that is filed only contains information that is displayed on the dashboard.</li>
+                </ul>
+                <p>Join the potty! Next time you're using a washroom without soap or toilet paper, file a report! A group of people vaping? File a report!</p>
+                
+                <!--Temporary for demo purposes-->
+                <script>
+                    function redirectReport(){
+                        if(confirm('Pls dr burt i only had 1 week to do this. for now this button redirects you to a report form for 1 washroom only.')){
+                            window.location.href = "https://docs.google.com/forms/d/e/1FAIpQLSdQZU0v4bc4IsjKWdg-PqpFs41WREefMmEL3QPnWPjA7A3i9g/viewform";
+                        }
+                    }
+                </script>
+
+                <a href ="#report" 
+                onclick = "redirectReport()"
+                style = 
+                "width: 100%;
+                background-color: rgb(10, 103, 243);
+                color: white;
+                text-decoration: none;
+                padding: 5px;
+                text-align: center; 
+                display: inline-block;"
+                >File a report</a>
+
+            </div>
+
+
+        </div>
+        <div id="big-foot">
+            <p style ="float:left; margin-left: 10px;">Made for BIOIDC.</p>
+            <p style = "float:right;margin-right: 10px;">View the <a href ="https://github.com/alex-cen/alex-cen.github.io/tree/main/potty" target="_blank" rel="noopener noreferrer" style="color:white">source code</a>. </p>
+        </div>
+    </body>
+</html>
