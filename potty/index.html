@@ -7,20 +7,53 @@
             html {
                 font-family: 'Comic Sans MS', 'Open Sans', Arial, Helvetica, sans-serif;
             }
-            .content {
-                position: absolute;
-                left: 50%;
-                top: 50%;
-                -webkit-transform: translate(-50%, -50%);
-                transform: translate(-50%, -50%);
+
+            .flex-container {
+                display: flex;
             }
+
+            .flex-child {
+                 flex: 1;
+
+            }  
+
+            .flex-child:first-child {
+                margin-right: 20px;
+            } 
 
         </style>
     </head>
     <body>
-        <div class="content">
-            <h1 style ="margin: 0 auto">coming soon</h1>
-        </div>
+        <script type="text/javascript" language="javascript"> 
+            $('.frame').css('height', $(window).height()+'px');
+            </script>
+        <div class="flex-container">
 
+            <div class ="flex-child male">
+                <!-- MALES -->
+                <!--Comfort-->
+                    <iframe width="600" height="371"  seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSSqygCNkeoFSnW85VusZSoKEwPccj1uQz1rwiGNTWZpNRLiILHV_XWdKS6pCxhQGk8d8sPuq0VOH6g/pubchart?oid=1847404108&amp;format=interactive"></iframe>
+                
+                    <!--Soap-->
+                <iframe width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSSqygCNkeoFSnW85VusZSoKEwPccj1uQz1rwiGNTWZpNRLiILHV_XWdKS6pCxhQGk8d8sPuq0VOH6g/pubchart?oid=261982762&amp;format=interactive"></iframe>
+
+                <!--Toilet Paper-->
+                <iframe width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSSqygCNkeoFSnW85VusZSoKEwPccj1uQz1rwiGNTWZpNRLiILHV_XWdKS6pCxhQGk8d8sPuq0VOH6g/pubchart?oid=993486655&amp;format=interactive"></iframe>
+
+                <!-- Drug Usage-->
+                <iframe width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSSqygCNkeoFSnW85VusZSoKEwPccj1uQz1rwiGNTWZpNRLiILHV_XWdKS6pCxhQGk8d8sPuq0VOH6g/pubchart?oid=2052375382&amp;format=interactive"></iframe>
+            </div>
+            <div class ="flex-child female">
+                 <!-- FEMALES -->
+                <!--Comfort-->
+                <iframe width="100%" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSSqygCNkeoFSnW85VusZSoKEwPccj1uQz1rwiGNTWZpNRLiILHV_XWdKS6pCxhQGk8d8sPuq0VOH6g/pubchart?oid=1184766845&amp;format=interactive"></iframe>
+                <!--Soap-->
+                <iframe width="100%" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSSqygCNkeoFSnW85VusZSoKEwPccj1uQz1rwiGNTWZpNRLiILHV_XWdKS6pCxhQGk8d8sPuq0VOH6g/pubchart?oid=1176627008&amp;format=interactive"></iframe>
+                <!--Toilet Paper-->
+                <iframe width="100%" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSSqygCNkeoFSnW85VusZSoKEwPccj1uQz1rwiGNTWZpNRLiILHV_XWdKS6pCxhQGk8d8sPuq0VOH6g/pubchart?oid=62996067&amp;format=interactive"></iframe>
+                <!-- Drug Usage-->
+                <iframe width="565" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSSqygCNkeoFSnW85VusZSoKEwPccj1uQz1rwiGNTWZpNRLiILHV_XWdKS6pCxhQGk8d8sPuq0VOH6g/pubchart?oid=103114285&amp;format=interactive"></iframe>
+            </div>
+        </div>
     </body>
 </html>
