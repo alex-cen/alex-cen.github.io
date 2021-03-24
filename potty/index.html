@@ -1,58 +1,71 @@
 <html>
     <head>
-        <title>AYJ Potty</title>
+        <title>Results</title>
         <meta name="description" content="Potty@AYJ, improving the go.">
         <link rel="stylesheet" href="nav-bar.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <link rel="https://fonts.gstatic.com/s/opensans/v18/mem8YaGs126MiZpBA-UFW50bf8pkAp6a.woff2",rel="stylesheet">
         <style>
             html {
-                font-family: 'Comic Sans MS', 'Open Sans', Arial, Helvetica, sans-serif;
+                font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+            }
+            body {
+                margin: 0;
+                padding-bottom: 100px;
+            }
+            .content {
+                margin: 8;
             }
 
-            .flex-container {
-                display: flex;
+            a, a:visited{
+                color: black;
             }
 
-            .flex-child {
-                 flex: 1;
-
-            }  
-
-            .flex-child:first-child {
-                margin-right: 20px;
-            } 
-
+        #big-foot{
+            margin-top: 100px;
+            background-color:grey;
+            width:100%;
+            overflow: hidden;
+            color: white;
+            position: fixed;
+            bottom: 0;
+            height: 30px;
+            font-size: 50%;
+        }
         </style>
     </head>
     <body>
-        <h1>Preliminary Results</h1>
-        <div class="flex-container">
-            <div class ="flex-child male">
-                <!-- MALES -->
-                <!--Comfort-->
-                    <iframe width="600" height="371"  seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSSqygCNkeoFSnW85VusZSoKEwPccj1uQz1rwiGNTWZpNRLiILHV_XWdKS6pCxhQGk8d8sPuq0VOH6g/pubchart?oid=1847404108&amp;format=interactive"></iframe>
-                
-                    <!--Soap-->
-                <iframe width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSSqygCNkeoFSnW85VusZSoKEwPccj1uQz1rwiGNTWZpNRLiILHV_XWdKS6pCxhQGk8d8sPuq0VOH6g/pubchart?oid=261982762&amp;format=interactive"></iframe>
-
-                <!--Toilet Paper-->
-                <iframe width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSSqygCNkeoFSnW85VusZSoKEwPccj1uQz1rwiGNTWZpNRLiILHV_XWdKS6pCxhQGk8d8sPuq0VOH6g/pubchart?oid=993486655&amp;format=interactive"></iframe>
-
-                <!-- Drug Usage-->
-                <iframe width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSSqygCNkeoFSnW85VusZSoKEwPccj1uQz1rwiGNTWZpNRLiILHV_XWdKS6pCxhQGk8d8sPuq0VOH6g/pubchart?oid=2052375382&amp;format=interactive"></iframe>
+        <!-- Navigation Bar -->
+        <!-- Modified from a W3 Schools tutorial-->
+        <div class="topnav" id="myTopnav">
+            <a class ="#active" href ="index.html" style ="color:white">Potty@AY</a> 
+            <div style ='float:right'> <!--Float buttons right-->
             </div>
-            <div class ="flex-child female">
-                 <!-- FEMALES -->
-                <!--Comfort-->
-                <iframe width="100%" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSSqygCNkeoFSnW85VusZSoKEwPccj1uQz1rwiGNTWZpNRLiILHV_XWdKS6pCxhQGk8d8sPuq0VOH6g/pubchart?oid=1184766845&amp;format=interactive"></iframe>
-                <!--Soap-->
-                <iframe width="100%" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSSqygCNkeoFSnW85VusZSoKEwPccj1uQz1rwiGNTWZpNRLiILHV_XWdKS6pCxhQGk8d8sPuq0VOH6g/pubchart?oid=1176627008&amp;format=interactive"></iframe>
-                <!--Toilet Paper-->
-                <iframe width="100%" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSSqygCNkeoFSnW85VusZSoKEwPccj1uQz1rwiGNTWZpNRLiILHV_XWdKS6pCxhQGk8d8sPuq0VOH6g/pubchart?oid=62996067&amp;format=interactive"></iframe>
-                <!-- Drug Usage-->
-                <iframe width="565" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSSqygCNkeoFSnW85VusZSoKEwPccj1uQz1rwiGNTWZpNRLiILHV_XWdKS6pCxhQGk8d8sPuq0VOH6g/pubchart?oid=103114285&amp;format=interactive"></iframe>
-            </div>
+        </div>
+
+        <div class ="content">
+
+            <h1>AYJ Washroom Survey Results</h1>
+            <p>A questionare was devloped to evaluate student perception of AYJSS's washrooms. A total of 36 students completed the survey, with the majority of sample representation from grades 11-12. A breakdown of the respondent population is shown below. </p>
+            <img src = "images/grade.png" style ="width: 50%"></img><img src = "images/gender.png" style ="width: 50%"></img>
+
+            <h2>Most Common Suggestions & Complaints</h2>
+            <p>Students were given a free-response to list their concerns and suggestions for the washrooms. The submissions were categorized by genders and analyzed by an AI word cloud generator (<a href ="https://monkeylearn.com/word-cloud/">MonkeyLearn</a>). The results are shown below.</p>
+            <img src ="images/male_written.svg" style = "width: 50%"></img><img src="images/female_written.svg" style = "width:50%"></img>
+
+            <h2>Quantitative Rankings</h2>
+            <p>Respondents were asked to rank their feelings about certain prompts on a scale of 1 to 7. The first ranking asked 
+                respondents how they felt about the supply of soap in the washrooms (1: there's never soap; 7: endless soap). The second asked about the supply of toilet paper. 
+                The third asked how big of an issue drug usage was in the washrooms (1: no issue; 7: fix it ASAP).
+            </p>
+            <p>A summary of the quantitative ranking results can be viewed <a href ="/quanti.html">here.</a></p>
+
+
+
+        </div>
+        <div id="big-foot">
+            <p style ="float:left; margin-left: 10px;">Made for BIOIDC.</p>
+            <p style = "float:right;margin-right: 10px;">View the <a href ="https://github.com/alex-cen/alex-cen.github.io/tree/main/potty" target="_blank" rel="noopener noreferrer" style="color:white">source code</a>. </p>
         </div>
     </body>
 </html>
